@@ -16,3 +16,14 @@ mutation($removeDateId: ID!) {
   }
 }
 
+mutation {
+  addDay(input: {
+    date: "1/12/2025"
+    mountain: "Alpine"
+    conditions: HEAVY
+  }) {
+    id
+    mountain
+    conditions
+  }
+}
