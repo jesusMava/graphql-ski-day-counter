@@ -8,6 +8,17 @@ const typeDefs = gql`
         conditions: Conditions
     }
 
+    input AddDayInput {
+        date: String
+        mountain: String!
+        conditions: Conditions!
+    }
+
+    type Mutation {
+        addDay(input: AddDayInput!): SkiDay
+        removeDate(id: ID!): SkiDay!
+    }
+
     enum Conditions {
         POWDER
         HEAVY
