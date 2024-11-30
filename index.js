@@ -3,10 +3,19 @@ const { ApolloServer, gql, MockList } = require("apollo-server")
 const typeDefs = gql`
     scalar Date
 
+    """
+    An object that describes the characteristics of a ski day
+
+    """
+
     type SkiDay {
+          "A ski day's unique identifier"
         id: ID!
+          "A ski date  that a ski day occurred"
         date: Date!
+          "A ski location where a ski day  occurred"
         mountain: String!
+          "A date that a ski day occurred"
         conditions: Conditions
     }
 
@@ -38,6 +47,10 @@ const typeDefs = gql`
     type Query {
         totalDays: Int!
         allDays: [SkiDay!]!
+    }
+
+    type Subscription {
+        newDay: SkiDay!
     }
 `
 
